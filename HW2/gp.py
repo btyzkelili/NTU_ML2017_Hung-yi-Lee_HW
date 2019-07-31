@@ -63,6 +63,7 @@ def split_valid_set(X, Y, percentage):
 
 def valid(X, Y, mu1, mu2, shared_sigma, N1, N2):
     sigma_inv = inv(shared_sigma)
+    # 
     w = np.dot((mu1-mu2), sigma_inv)
     X_t = X.T
     b = (-0.5) * np.dot(np.dot(mu1.T, sigma_inv), mu1) + (0.5) * np.dot(np.dot(mu2.T, sigma_inv), mu2) + np.log(float(N1)/N2)
